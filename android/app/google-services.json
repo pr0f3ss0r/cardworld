@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "558528641925",
+    "project_id": "cardworld-2bdca",
+    "storage_bucket": "cardworld-2bdca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558528641925:android:a581236cfde2f8f798e2ec",
+        "android_client_info": {
+          "package_name": "com.example.cardworld"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIb4xB871AlAt9Rsv389wmdKteQBtAKnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
