@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import '../models/transaction_model.dart';
+import '../data/models/transaction_model.dart';
 
 abstract class TransactionHistoryState extends Equatable {
   const TransactionHistoryState();

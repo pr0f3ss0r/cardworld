@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'transaction_history_event.dart';
 import 'transaction_history_state.dart';
-import '../models/transaction_model.dart';
+import '../data/models/transaction_model.dart';
 
 class TransactionHistoryBloc extends Bloc<TransactionHistoryEvent, TransactionHistoryState> {
   TransactionHistoryBloc() : super(TransactionHistoryLoading()) {

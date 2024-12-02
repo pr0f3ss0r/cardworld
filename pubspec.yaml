@@ -45,6 +45,9 @@ dependencies:
   firebase_auth: ^5.2.0
   firebase_storage: ^12.2.0
   cloud_firestore: ^5.4.0
+  cloudinary_flutter: ^1.0.0
+  cloudinary_url_gen: ^1.0.0
+  cloudinary: ^1.2.0
 
 dev_dependencies:
   flutter_test:

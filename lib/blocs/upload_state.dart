@@ -9,7 +9,14 @@ abstract class UploadState extends Equatable {
 
 class UploadInitial extends UploadState {}
 
-class UploadInProgress extends UploadState {}
+class UploadLoading extends UploadState {
+  final double progress; // Represents the upload progress from 0.0 to 1.0
+
+  const UploadLoading(this.progress);
+
+  @override
+  List<Object> get props => [progress];
+}
 
 class UploadSuccess extends UploadState {}
 

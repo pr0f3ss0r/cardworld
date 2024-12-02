@@ -11,11 +11,12 @@ abstract class UploadEvent extends Equatable {
 
 class UploadGiftCard extends UploadEvent {
   final String cardType;
+  final String subCategory;
   final String amount;
   final File image;
 
-  const UploadGiftCard(this.cardType, this.amount, this.image);
+  const UploadGiftCard(this.cardType, this.subCategory, this.amount, this.image);
 
   @override
-  List<Object> get props => [cardType, amount, image];
+  List<Object> get props => [cardType, subCategory, amount, image];
 }

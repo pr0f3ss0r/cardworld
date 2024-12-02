@@ -1,13 +1,18 @@
+
+import 'package:cardworld/presentation/screens/login_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'upload_screen.dart';
 import 'profile_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../bloc/card_rates_bloc.dart';
-import '../bloc/card_rates_state.dart';
-import '../bloc/upload_bloc.dart';
-import '../bloc/withdrawal_bloc.dart';
-import '../bloc/transaction_history_bloc.dart';
-import '../bloc/transaction_history_event.dart';
+import '../../blocs/card_rates_bloc.dart';
+import '../../blocs/card_rates_state.dart';
+import '../../blocs/upload_bloc.dart';
+import '../../blocs/withdrawal_bloc.dart';
+import '../../blocs/transaction_history_bloc.dart';
+import '../../blocs/transaction_history_event.dart';
+import '../../blocs/account_bloc.dart';
+import '../../blocs/account_event.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -21,18 +26,20 @@ class HomeScreen extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => MultiBlocProvider(
-                    providers: [
-                      BlocProvider(
-                        create: (context) => WithdrawalBloc(),
-                      ),
-                      BlocProvider(
-                        create: (context) => TransactionHistoryBloc()..add(LoadTransactionHistory()),
-                      ),
-                    ],
+                  builder: (context) => BlocProvider(
+                    create: (context) => AccountBloc()..add(LoadAccountBalance()),
                     child: ProfileScreen(),
                   ),
                 ),
+              );
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () async {
+              await FirebaseAuth.instance.signOut();
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => const LoginScreen()),
               );
             },
           ),
